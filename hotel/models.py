@@ -21,17 +21,9 @@ class Room(models.Model):
     beds = models.IntegerField()
     desc = models.TextField()
     capacity = models.IntegerField()
-    #image = models.ImageField(height_field=100,width_field=100)
-    image = models.CharField(max_length=100)
+    image = models.CharField(max_length=400)
 
     def __str__(self):
         return self.category
     
 
-
-'''
-class Room(models.Model):
-    name = models.CharField(max_length=100)
-    desc = models.TextField()
-    image = models.CharField(max_length=400)
-'''

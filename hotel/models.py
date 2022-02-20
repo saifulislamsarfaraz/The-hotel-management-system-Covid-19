@@ -16,6 +16,7 @@ class Room(models.Model):
         ('KIN','King'),
         ('QUE', 'Queen'),
         ('STDIOU', 'Stduio'),
+        ('HTR', 'Hollywood-Twin-Room'),
         ('ES', 'Executive'),
         ('MS', 'MiniSuite'),
         ('PS', 'PresidentialSuite'),

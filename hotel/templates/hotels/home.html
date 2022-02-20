@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     {% load static %}
     <link rel="stylesheet" href="{% static 'nev.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'image/' %}">
 </head>
 <body>
     <div class="topnav">
@@ -41,7 +43,7 @@
             <th style="width:30%">Description</th>
             <th style="width:20%">Capacity</th>
             <th style="width:30%">Image</th>
-            <th style="width:20%">View</th>
+            <th style="width:30%">View</th>
 
 
             </tr>
@@ -60,7 +62,7 @@
                 
                 <td>{{r.desc|truncatechars:250}}</td>
                 <td>{{r.capacity}}</td>
-                <td><img src='{{r.image}}' class="p-2" style="height:200px"></td>
+                <td><img src= "{% static 'images/{{r.image}}' %}" class="p-2" style="height:200px" id="image" ></td>
 
 
                 <td><a href='{{r.id}}' class="btn btn-success">View</a></td>

@@ -84,6 +84,7 @@ DATABASES = {
 }
 
 CACHE_TTL = 60*1500
+
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",

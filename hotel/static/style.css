@@ -126,3 +126,22 @@ input[type="submit"]:hover{
 .register_link a:hover{
   text-decoration: underline;
 }
+.topnav .login-container .lgbtn {
+  float: left;
+  background-color: #d97726;
+  color:white;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.topnav .login-container .lgbtn:hover {
+  background-color: rgb(33, 213, 236);
+}
+.topnav .login-container .lgbtn {
+  border: 2px;;
+}

@@ -6,12 +6,14 @@
     <link rel="stylesheet" href="{% static 'style.css' %}">
   </head>
   <body>
-    <div class = 'hotel'>
-     
-    </div>
+   <div class="topnav">
+        <div class="login-container">
+        <a class="lgbtn" href="{% url 'home' %}">Home</a>
+        </div>
+    </div>  
     
     <div class="center">
-      <h1>Hotel International Co19<br>Login</h1>
+      <h1>Hotel International Cointeen<br>Login</h1>
       <form method="POST" action="">
         {% csrf_token %}
 

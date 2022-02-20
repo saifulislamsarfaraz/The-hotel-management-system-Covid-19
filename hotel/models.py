@@ -1,5 +1,6 @@
 from distutils.command.upload import upload
 from email.mime import image
+import numbers
 from ssl import Options
 from unicodedata import category
 from django.db import models
@@ -41,4 +42,9 @@ class Room(models.Model):
     def __str__(self):
         return self.category
     
-
+class Register(models.Model):
+    vcn = models.CharField(max_length=12)
+    td = models.IntegerField()
+    ct = models.CharField(max_length=10)
+    username = models.CharField(max_length=10)
+   

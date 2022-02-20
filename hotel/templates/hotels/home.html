@@ -6,8 +6,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     {% load static %}
     <link rel="stylesheet" href="{% static 'nev.css' %}">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
     
-    <link rel="stylesheet" href="{% static 'image/' %}">
+    <link rel="stylesheet" href="{% static 'images/' %}">
 </head>
 <body>
     <div class="topnav">
@@ -19,15 +20,19 @@
         </div>
       </div>    
       
-  
+        <div class="container mt-xl-4 " style="font-family: Roboto">
+            <h1>Hotel International Cointeen</h1>
+        </div>
 
     <div class="container mt-5">
         <form method="get">
         <div class="mx-auto text-center d-flex ">
-            <input class="form-control" name="category" placeholder="Search" style="width:400px">
+            <input class="form-control" name="number" placeholder="Search" style="width:400px">
             <button class="btn btn-primary">Search</button>
         </div>
-    </form>
+
+
+    
 
     </div>
     
@@ -42,7 +47,6 @@
             <th style="width:20%">Beds</th>
             <th style="width:30%">Description</th>
             <th style="width:20%">Capacity</th>
-            <th style="width:30%">Image</th>
             <th style="width:30%">View</th>
 
 
@@ -62,7 +66,8 @@
                 
                 <td>{{r.desc|truncatechars:250}}</td>
                 <td>{{r.capacity}}</td>
-                <td><img src= "{% static 'images/{{r.images}}' %}"  style="height:200px" id="image" ></td>
+                
+               
 
              
                 <td><a href='{{r.id}}' class="btn btn-success">View</a></td>

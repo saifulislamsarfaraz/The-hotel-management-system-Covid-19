@@ -10,14 +10,28 @@ from django.db import models
 class Room(models.Model):
     
     ROOM_CATEGORIES = (
-        ('YAC','AC'),
-        ('NAC','NON-AC'),
-        ('DEL','DELUXE'),
-        ('KIN','KING'),
-        ('QUE', 'QUEEN'),
+        ('YAC','Ac'),
+        ('NAC','Non-Ac'),
+        ('DEL','Deluex'),
+        ('KIN','King'),
+        ('QUE', 'Queen'),
+        ('STDIOU', 'Stduio'),
+        ('ES', 'Executive'),
+        ('MS', 'MiniSuite'),
+        ('PS', 'PresidentialSuite'),
+        ('AP', 'Apartments'),
+        ('CR', 'ConnectingRooms'),
+        ('MR', 'MurphyRooms'),
+        ('AR', 'Accessible'),
+        ('CN', 'Cabana'),
+        ('ADR', 'AdjoiningRoom'),
+        ('VIL', 'Villa'),
+        ('EF', 'ExecutiveRoom'),
+        ('NSM', 'Non-SmokingRoom'),
+
     )
     number = models.IntegerField()
-    category = models.CharField(max_length=3,choices=ROOM_CATEGORIES)
+    category = models.CharField(max_length=6,choices=ROOM_CATEGORIES)
     beds = models.IntegerField()
     desc = models.TextField()
     capacity = models.IntegerField()

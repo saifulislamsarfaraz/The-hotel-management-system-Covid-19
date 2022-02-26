@@ -28,7 +28,7 @@
             <span></span>
             <label>Password</label>
           </div>
-          <div class="pass">Forgot Password?</div>
+          <div class="pass"> <a href="{% url 'reset_password' %}" class="link">Forgot Password?</a> </div>
           <input type="submit" value="Login">
 
           {% for message in messages %}

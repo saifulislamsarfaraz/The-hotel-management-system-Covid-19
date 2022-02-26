@@ -66,16 +66,18 @@ def deshBoard(request):
 
 def get_room(filter_room=None):
     if filter_room:
-        rooms = Room.objects.filter(name__contains = filter_room)
+        print("DATA COMING FROM DB")
+        room = Room.objects.filter(category__contains = filter_room)
     else:
-        rooms = Room.objects.all()
-    return rooms
+        room = Room.objects.all()
+    return room
 
 
 def home(request):
 
     filter_room = request.GET.get('room')
     if cache.get(filter_room):
+        print("DATA COMING FROM CACHE")
         room = cache.get(filter_room)
     else:
         if filter_room:
@@ -89,6 +91,7 @@ def home(request):
 
 def show(request,id):
     if cache.get(id):
+      
         room = cache.get(id)
     else:
         room = Room.objects.get(id=id)

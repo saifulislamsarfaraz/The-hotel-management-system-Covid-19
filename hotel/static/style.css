@@ -78,9 +78,11 @@
   cursor: pointer;
 }
 .pass:hover{
-  text-decoration: underline;
+  text-decoration: none;
 }
-
+.pass .link{
+  text-decoration: none;
+}
 
 input[type="submit"]{
   

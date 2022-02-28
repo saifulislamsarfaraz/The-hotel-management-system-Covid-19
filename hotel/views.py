@@ -88,7 +88,7 @@ def home(request):
     context = {'room':room}
     return render(request,'hotels/home.html',context)
 
-
+#@login_required(login_url='login')
 def show(request,id):
     if cache.get(id):
       

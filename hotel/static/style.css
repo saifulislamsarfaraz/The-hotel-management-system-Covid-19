@@ -49,7 +49,7 @@
     pointer-events: none;
     transition: .5s;
   }
-
+ 
   .txt_field span::before{
     content: '';
     position:absolute;

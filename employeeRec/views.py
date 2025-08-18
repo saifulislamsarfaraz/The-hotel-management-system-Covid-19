@@ -1,7 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-from django.utils import timezone
 from .facerec.faster_video_stream import stream
 from .facerec.click_photos import click
 from .facerec.train_faces import trainer
@@ -9,10 +8,7 @@ from .facerec.identify_faces import identify_faces
 from .models import Employee, Detected
 from .forms import EmployeeForm
 import cv2
-import pickle
-import face_recognition
-import datetime
-from cachetools import TTLCache
+from datetime import datetime
 
 
 cache = TTLCache(maxsize=20, ttl=60)

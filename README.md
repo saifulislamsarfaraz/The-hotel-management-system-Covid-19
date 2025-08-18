@@ -39,6 +39,25 @@ python manage.py runserver
 14. Employee Detected (Face Recognition)
 15. User Authentications Permissions
 16. Booking Rooms
+17. **Room Availability Calendar**: Check room availability based on category and date range.
+
+## Planned Features
+
+1.  **Online Booking System with Payment Gateway Integration**: Implement a robust online booking system with secure payment processing.
+2.  **User Dashboard Improvements**: Enhance the user dashboard for better booking management and profile overview.
+3.  **Admin Dashboard/Management Panel**: Develop a dedicated admin interface for comprehensive management.
+4.  **Guest Management**: Implement detailed guest profiles and loyalty programs.
+5.  **Housekeeping Management**: System to track room cleaning status and assign tasks.
+6.  **Reporting and Analytics**: Generate reports on bookings, revenue, and occupancy.
+7.  **Doctor/Specialist Profiles**: Detailed profiles for healthcare professionals.
+8.  **Appointment Reminders**: Automated email/SMS reminders for appointments.
+9.  **Attendance System**: Full attendance tracking for employees.
+10. **Payroll Integration**: Basic payroll management.
+11. **Search and Filtering**: More advanced search and filtering options.
+12. **Notifications System**: In-app notifications for various events.
+13. **Multilingual Support**: Support for multiple languages.
+14. **Security Enhancements**: Implement two-factor authentication (2FA) and granular permissions.
+15. **API for Mobile Apps**: Develop a RESTful API for mobile application integration.
 
 ## Screenshots
 

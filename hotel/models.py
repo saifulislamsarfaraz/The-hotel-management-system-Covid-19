@@ -1,5 +1,6 @@
 from django.db import models
 from django.conf import settings
+from django.db.models import DecimalField
 
 # Create your models here.
 
@@ -54,6 +55,9 @@ class BookingRoom(models.Model):
     room = models.ForeignKey(Room, on_delete=models.CASCADE)
     check_in = models.DateTimeField()
     check_out = models.DateTimeField()
+    payment_status = models.CharField(max_length=20, default='PENDING')
+    transaction_id = models.CharField(max_length=100, blank=True, null=True)
+    amount_paid = DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
    
 
     def __str__(self):

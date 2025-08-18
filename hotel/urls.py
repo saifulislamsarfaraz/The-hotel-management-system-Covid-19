@@ -20,6 +20,7 @@ urlpatterns = [
     path('contact/',views.contactus, name='contact'),
     path('hotelsection/',views.hotelsection,name="hotelsection"),
     path('booking/',views.bookingForm,name="booking"),
+    path('rooms/availability/', views.room_availability, name='room_availability'),
     path('employeeRec/index/',views.employee, name='employee'),
     path('reset_password/',
      auth_views.PasswordResetView.as_view(template_name="hotel/password_reset.html"),name="reset_password"),

@@ -1,3 +1,5 @@
+import datetime
+from django.db.models import Q
 from django.shortcuts import render,redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth import authenticate, login, logout
@@ -7,6 +9,42 @@ from django.conf import settings
 from django.core.cache.backends.base import DEFAULT_TIMEOUT
 from django.views.decorators.cache import cache_page
 from django.core.cache import cache
+
+
+def room_availability(request):
+    room_category = request.GET.get('room_category')
+    check_in_str = request.GET.get('check_in')
+    check_out_str = request.GET.get('check_out')
+
+    available_rooms = []
+    
+    if room_category and check_in_str and check_out_str:
+        try:
+            check_in = datetime.datetime.strptime(check_in_str, '%Y-%m-%d').date()
+            check_out = datetime.datetime.strptime(check_out_str, '%Y-%m-%d').date()
+        except ValueError:
+            messages.error(request, "Invalid date format. Please use YYYY-MM-DD.")
+            return render(request, 'hotel/room_availability.html', {'available_rooms': [], 'room_categories': Room.ROOM_CATEGORIES})
+
+        rooms = Room.objects.filter(category=room_category)
+        
+        for room in rooms:
+            if check_availability(room, check_in, check_out):
+                available_rooms.append(room)
+        
+        if not available_rooms:
+            messages.info(request, "No rooms available for the selected criteria.")
+
+    context = {
+        'available_rooms': available_rooms,
+        'room_categories': Room.ROOM_CATEGORIES,
+        'selected_category': room_category,
+        'selected_check_in': check_in_str,
+        'selected_check_out': check_out_str,
+    }
+    return render(request, 'hotel/room_availability.html', context)
+
+
 
 from hotel.decorators import unauthenticated_user
 from .models import Room

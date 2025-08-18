@@ -1,7 +1,5 @@
 from django.shortcuts import render
 from .models import Appointment
-from hotel import urls
-from employeeRec import urls
 from .forms import BookForm,AppointmentForm
 
 def apoinment(request):

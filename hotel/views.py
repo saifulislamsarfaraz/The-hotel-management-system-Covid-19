@@ -1,10 +1,5 @@
-from audioop import reverse
-from itertools import chain
-from multiprocessing import context
-from pyexpat import model
 from django.shortcuts import render,redirect
 from django.http import HttpResponse, HttpResponseRedirect
-from django.forms import inlineformset_factory
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -12,7 +7,6 @@ from django.conf import settings
 from django.core.cache.backends.base import DEFAULT_TIMEOUT
 from django.views.decorators.cache import cache_page
 from django.core.cache import cache
-from django.views.generic import ListView,FormView
 
 from hotel.decorators import unauthenticated_user
 from .models import Room

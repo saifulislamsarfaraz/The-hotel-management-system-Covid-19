@@ -1,6 +1,4 @@
 from django.urls import path
-from hotel import urls
-from employeeRec import urls
 from . import views
 
 urlpatterns = [

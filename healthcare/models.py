@@ -1,9 +1,5 @@
-import email
 from django.contrib.auth.models import User
-from datetime import timezone
-from django.conf import settings
 from django.db import models
-from django.urls import reverse
 
 # Create your models here.
 

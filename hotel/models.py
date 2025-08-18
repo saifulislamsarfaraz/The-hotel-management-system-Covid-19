@@ -1,16 +1,5 @@
-from datetime import timezone
-from distutils.command.upload import upload
-from email.mime import image
-import numbers
-from pyexpat import model
-from ssl import Options
-from tabnanny import check
-from typing_extensions import Self
-from unicodedata import category, name
 from django.db import models
 from django.conf import settings
-
-from django.urls import reverse_lazy
 
 # Create your models here.
 

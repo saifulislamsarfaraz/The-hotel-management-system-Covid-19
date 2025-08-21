@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'nev.css' %}">
+</head>
+<body>
+  {% load custom_tags %}
+    <div class="topnav">
+      
+      <a class="active" href="{% url 'home' %}">Home</a>
+      <a href="#about">About</a>
+      <a href="{% url 'contact' %}">Contact</a>
+      <a href="{% anchor 'home' 'hotel' %}">Hotel</a>
+      <a href="{% url 'healthhome' %}">Health Care</a>
+      <a href="{% url 'index' %}">Indentify You</a>
+        <div class="login-container">
+        <span ><a class ="hello-msg">Hello, {{request.user}}</span>
+        <a class="lgbtn" href="{% url 'logout' %}">Logout</a>
+        </div>
+      </div>    
+      <body>
+        
+    <section class="home" id="home" style="padding:2rem 9%;">
+    
+        <div class="image container mt-4 d-flex justify-content-center">
+            <img src="{% static 'images/Hotel Overview pg.svg' %}" alt="">
+        </div>
+    
+        <div class="">  
+        <div class="container mt-4 d-flex justify-content-center" style="font-family: Roboto">
+            <h1>International Restrain Hotel <br</h1>
+            <br>
+            <h5>stay safe, stay healthy</h5>
+            <a class="btn btn-primary"  href="{% url 'contact' %}" style="font-size: 15px; margin-bottom: 10px;">Contact Us</a>
+        </div>
+        </div>
+    </section>
+    
+    <section class="hotel" id="hotel" style="padding:2rem 9%;">
+            <div class="container mt-4 d-flex justify-content-center" style="font-family: Roboto">
+                <h1>Search Category Of Room</h1>
+            </div>
+        
+        <div class="container mt-5 d-flex justify-content-center">
+            <form method="get">
+            <div class="mx-auto text-center d-flex ">
+                <input class="form-control" name='room' placeholder="Search" style="width:400px">
+                <button class="btn btn-primary">Search</button>
+            </div>
+        </div>
+    
+        
+       
+        <div class="container mt-5 d-flex justify-content-center">
+            {% if room %}
+            <table class="table">
+                <thead class="bg-info text-light">
+                <tr>
+                <th style="width:20%">Category</th>
+                <th style="width:20%">Room Number</th>
+                <th style="width:20%">Beds</th>
+                <th style="width:20%">Description</th>
+                <th style="width:20%">Capacity</th>
+                <th style="width:20%">View</th>
+    
+    
+                </tr>
+                </thead>
+    
+                <tbody>
+                    {% for r in room %}
+                   
+                    <tr class="pt-4">                
+                    <td >{{r.category}}</td>
+                    <td>{{r.number}}</td>
+                    <td>{{r.beds}}</td>
+                    
+                    <td>{{r.desc|truncatechars:200}}</td>
+                    <td style="text-align:center;">{{r.capacity}}</td>
+                    <td><a href='{{r.id}}' class="btn btn-success">View</a></td>
+                    </tr>
+                   
+                    {% endfor %}
+                    <hr>
+                </tbody>
+    
+                
+            </table>
+            {% else %}
+            <p class="text-center"> No Room found.. Try something else</p>
+            {% endif %}
+        </div>
+    </section>
+    
+    </body>
+
+  </body>
+</html>

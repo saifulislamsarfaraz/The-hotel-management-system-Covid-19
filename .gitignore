@@ -1,0 +1,13 @@
+# Python
+*.pyc
+__pycache__/
+*.sqlite3
+
+# Zip files
+*.zip
+
+# Media files (if they are generated or large)
+media/
+
+# Other
+Installations.txt

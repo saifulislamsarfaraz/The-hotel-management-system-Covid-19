@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'nev.css' %}">
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <div class="topnav">
+    <a class="active" href="{% url 'home' %}">Home</a>
+    <a href="#about">About</a>
+    <a href="{% url 'contact' %}">Contact</a>
+    <a href="#book">Book</a>
+    <div class="login-container">
+        <span ><a class ="hello-msg">Hello, {{request.user}}</span>
+        <a class="lgbtn" href="{% url 'logout' %}">Logout</a>
+        </div>
+  </div>  
+    
+  <section class="book" id="book">
+
+    <h1 class="heading"> <span>book</span> now </h1>    
+
+    <div class="row">
+        <div class="image">
+            <img src="{% static 'images/Hotel Overview pg.svg' %}" alt="">
+        </div>
+        <form method="post" autocomplete="off">
+            {% csrf_token %}
+            <div class="box">
+                <label>Username:</label>
+                {{form.user}}
+                <span></span>
+             
+              </div>
+              <div class="box">
+                <label>Room:</label>
+                {{form.room}}
+              </div>
+              <div class="box">
+                {{form.check_in.errors}}
+                <label for="form.check_in.id_for_label">From</label>
+                {{form.check_in}}
+                <span></span>
+                
+              </div>
+              <div class="box">
+                <label for="{{form.check_out.id_for_label}}">To:</label>
+                {{form.check_out}}
+                <span></span>
+              </div>
+            
+            
+              <input type="submit" value="book now" class="btn">
+              <a href="/" class="btn">Back</a>
+          </form>
+       
+  
+    </div>
+  
+    
+  
+  </section>
+
+    
+
+  </body>
+</html>

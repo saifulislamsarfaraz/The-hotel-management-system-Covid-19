@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+  </head>
+  <body>
+    <div class="topnav">
+      <div class="login-container">
+      <a class="lgbtn" href="{% url 'home' %}">Home</a>
+      </div>
+  </div>  
+    <div class="center">
+    <h1>Enter Employee details</h1>
+      <form method="post">
+        {% csrf_token %}
+        <div class="txt_field">
+            {{ form.id }}
+          <span></span>
+          <label>ID</label>
+        </div>
+        <div class="txt_field">
+            {{ form.name }}
+          <span></span>
+          <label>Name</label>
+        </div>
+       
+          <input type="submit" value="Save">
+         
+      </form>
+    </div>
+
+  </body>
+</html>

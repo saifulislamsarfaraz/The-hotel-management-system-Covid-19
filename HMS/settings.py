@@ -20,12 +20,21 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+<<<<<<< HEAD
 SECRET_KEY = 'django-insecure-b&5@2&1@dy8)&mwpm&(6_dpwqg&$rl4f_()vq1!@ycb3^3^*l@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
+=======
+SECRET_KEY = os.environ.get('SECRET_KEY')
+
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = os.environ.get('DEBUG') == 'True'
+
+ALLOWED_HOSTS = ['*']
+>>>>>>> origin/improvements
 
 
 # Application definition
@@ -38,8 +47,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'hotel',
+<<<<<<< HEAD
 
     
+=======
+    'healthcare',
+    'employeeRec',
+>>>>>>> origin/improvements
 ]
 
 MIDDLEWARE = [
@@ -79,7 +93,11 @@ WSGI_APPLICATION = 'HMS.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
+<<<<<<< HEAD
         'NAME': str(BASE_DIR / 'db.sqlite3'),
+=======
+        'NAME': BASE_DIR / 'db.sqlite3',
+>>>>>>> origin/improvements
     }
 }
 
@@ -131,8 +149,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
+<<<<<<< HEAD
 STATIC_URL = 'static/'
 MEDIA_URL = 'images/'
+=======
+STATIC_URL = '/static/'
+>>>>>>> origin/improvements
 
 
 
@@ -146,5 +168,13 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+<<<<<<< HEAD
 EMAIL_HOST_USER = 'sarfrazahmed42654@gmail.com'
 EMAIL_HOST_PASSWORD = 'S@if42654'
+=======
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+
+MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_URL = '/media/'
+>>>>>>> origin/improvements

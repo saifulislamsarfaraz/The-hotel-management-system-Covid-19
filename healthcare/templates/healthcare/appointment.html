@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'nev.css' %}">
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <div class="topnav">
+    <a class="active" href="{% url 'home' %}">Home</a>
+    <a href="#about">About</a>
+    <a href="{% url 'contact' %}">Contact</a>
+    <a href="#book">Book</a>
+    <div class="login-container">
+        <span ><a class ="hello-msg">Hello, {{request.user}}</span>
+        <a class="lgbtn" href="{% url 'logout' %}">Logout</a>
+        </div>
+  </div>  
+    
+  <section class="book" id="book">
+
+    <h1 class="heading"> <span>Take</span> Appoinment </h1>    
+
+    <div class="row">
+        <div class="image">
+            <img src="{% static 'image/book-img.svg' %}" alt="">
+        </div>
+        <form method="post" autocomplete="off">
+            {% csrf_token %}
+            <div class="box">
+                <label>Username:</label>
+                {{form.user}}
+                <span></span>
+             
+              </div>
+              <div class="box">
+                <label>Full Name:</label>
+                {{form.full_name}}
+              </div>
+              <div class="box">
+                <label>Location:</label>
+                {{form.location}}
+                <span></span>
+              </div>
+              <div type='number' class="box">
+                <label>Start Time:</label>
+                {{form.start_time}}
+                <span></span>
+                
+              </div>
+              <div class="box">
+                <label>End Time:</label>
+                {{form.end_time}}
+              </div>
+
+              <div class="box">
+                <label>Qualification:</label>
+                {{form.qualification_name}}
+              </div>
+
+              <div class="box">
+                <label>Institute Name:</label>
+                {{form.institute_name}}
+              </div>
+
+              <div class="box">
+                <label>Hospital Name:</label>
+                {{form.hospital_name}}
+              </div>
+
+              <div class="box">
+                <label>Department:</label>
+                {{form.department}}
+              </div>
+
+              <div class="box">
+                <label>Created Date:</label>
+                {{form.created_at}}
+              </div>
+            
+            
+          
+              <input type="submit" value="book now" class="btn">
+          </form>
+       
+  
+    </div>
+  
+    
+  
+  </section>
+
+    
+
+  </body>
+</html>

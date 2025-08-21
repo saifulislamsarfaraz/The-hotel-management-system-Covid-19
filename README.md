@@ -54,7 +54,25 @@ python manage.py runserver
 15. User Authentications Permissions
 16. Booking Rooms
 17. **Room Availability Calendar**: Check room availability based on category and date range.
+To run this porgram you need:
 
+python 3.10.2
+django 4.0.2
+Redis  3.2.100 
+Download link: https://github.com/MicrosoftArchive/redis/releases/download/win-3.2.100/Redis-x64-3.2.100.msi
+
+Command line:
+Open command prompt go the HMS file directory execute command line:
+
+pip install django-redis==4.12.1
+pip install django-redis-cache==3.0.0
+python manage.py runserver
+
+
+github link for this project:
+https://github.com/saifulislamsarfaraz/The-hotel-management-system-Covid-19.git
+
+Thanks for visited 
 ## Planned Features
 
 1.  **Online Booking System with Payment Gateway Integration**: Implement a robust online booking system with secure payment processing.
